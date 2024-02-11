@@ -24,7 +24,7 @@ public class PostfixToInfix {
     }
 
     public static void main(String[] args) {
-        String ss = "x6y/5z-*/P_";
+        String ss = "953+4*6/-";
         String newString = PostfixToInfix.postfixToInfix(ss);
         System.out.println(newString);
 }

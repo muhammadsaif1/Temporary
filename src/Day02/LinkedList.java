@@ -1,5 +1,7 @@
 package Day02;
 
+import Day03.LinkedStack;
+
 import java.util.Arrays;
 
 public class LinkedList {
@@ -169,6 +171,19 @@ public class LinkedList {
 //        }
 //        return mynewlist;
 //    }
+
+
+    public void printReverse() {
+        printReverse(head);
+        System.out.println();
+    }
+    private void printReverse(Node node) {
+        if (node == null) {
+            return;
+        }
+        printReverse(node.next);
+        System.out.print(node.data + " ");
+    }
 
 
 

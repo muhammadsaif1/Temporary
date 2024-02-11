@@ -176,6 +176,18 @@ public class LinkedStack {
 //        return a1;
 //    }
 
+    public void printReverse() {
+        printReverse(top);
+        System.out.println();
+    }
+    private void printReverse(Node node) {
+        if (node == null) {
+            return;
+        }
+        printReverse(node.next);
+        System.out.print(node.data + " ");
+    }
+
 
 
 
