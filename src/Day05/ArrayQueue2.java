@@ -22,15 +22,21 @@ public class ArrayQueue2{
     public void enQueue(String name , String property){
         if(isFull()){
             resize();
-
+        }
             personQueue[length] = new person();
             personQueue[length++].setData(name, property);
-        }
-        else {
-            personQueue[length] = new person();
-            personQueue[length++].setData(name, property);
-        }
+    }
 
+    public void addFirst(String name, String property) {
+        if (isFull()) {
+            resize();
+        }
+        for (int i = length; i > 0; i--) {
+            personQueue[i] = personQueue[i - 1];
+        }
+        personQueue[0] = new person();
+        personQueue[0].setData(name, property);
+        length++;
     }
     public void display(){
         for(int i=0;i<length;i++){
@@ -58,6 +64,21 @@ public class ArrayQueue2{
             return temp;
         }
     }
+
+    public person deleteLast() {
+        if (isEmpty()) {
+            System.out.println("No data");
+            return null;
+        } else {
+            person temp = personQueue[length - 1];
+            length--;
+            return temp;
+        }
+    }
+
+
+
+
     public boolean isFull(){
         return length==capacity;
     }
@@ -87,11 +108,23 @@ public class ArrayQueue2{
         return false;
     }
 
+    public person peek(){
+        return personQueue[0];
+    }
+
+    public person last(){
+        return personQueue[length];
+    }
+
     public static void main(String[] args) {
         ArrayQueue2 arr = new ArrayQueue2(10);
         arr.enQueue("Saif", "House");
         arr.enQueue("Saqib", "RR");
         arr.enQueue("Musaib", "Jet");
+        System.out.println(arr.deleteLast().getData());
+        arr.deQueue();
+        System.out.println(arr.peek().getData());
+        System.out.println(arr.last().getData());
 //
 //        System.out.println(arr.deQueue().getData());
 //        System.out.println(arr.getSize());
