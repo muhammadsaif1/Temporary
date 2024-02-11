@@ -1,12 +1,7 @@
 package Extra;
-
-
 import java.util.Stack;
-
 public class InfixToPostfix {
-    public static void main(String[] args) {
-        String infix = "9-(5+3)*4/6";
-        System.out.println(infix);
+    public String infixToPostfix(String infix){
         Stack<String> val= new Stack<>();
         Stack<Character>  op= new Stack<>();
         for (int i = 0; i <infix.length() ; i++) {
@@ -66,10 +61,12 @@ public class InfixToPostfix {
             char o = op.pop();
             String t = v1+v2+o;
             val.push(t);
-
         }
         String postfix = val.pop();
-        System.out.println("Value of Stack = "+ postfix);
+        return "Value of Stack = "+postfix;
     }
-}
+    public static void main(String[] args) {
+        InfixToPostfix ll = new InfixToPostfix();
+        System.out.println(ll.infixToPostfix("9-(5+3)*4/6"));
+}}
 

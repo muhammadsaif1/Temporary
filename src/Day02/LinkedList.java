@@ -119,14 +119,14 @@ public class LinkedList {
         return new String(b1);
     }
 
-    public int sum(){
+    public String sum(){
         Node temp = head;
-        int sum=0;
+        StringBuffer sum = new StringBuffer();
         while (temp != null){
-            sum++;
+            sum.append(temp.data+" ");
             temp=temp.next;
         }
-        return sum;
+        return new String(sum);
     }
 
 
@@ -180,6 +180,7 @@ public class LinkedList {
         System.out.println(ll.isEmpty());
         ll.insert("saif");
         ll.insert("Baby");
+        System.out.println(ll.sum());
         System.out.println(ll.isEmpty());
         ll.display();
         System.out.println(ll.size());

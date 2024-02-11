@@ -1,9 +1,5 @@
 package Day03;
 
-import Day02.LinkedList;
-
-import java.util.Stack;
-
 public class LinkedStack {
 
    public static class Node{
@@ -209,11 +205,10 @@ public class LinkedStack {
         secondSem.push("OOP");
         LinkedStack thirdSem = new LinkedStack();
         thirdSem.push("DSA");
-
-        LinkedStack mergedStack = firstSem.merge(firstSem,secondSem,thirdSem);
+LinkedStack mergedStack = firstSem.merge(firstSem,secondSem,thirdSem);
         mergedStack.display();
+        System.out.println(mergedStack.peek());
 //        System.out.println(mergedStack.peek());
-        System.out.println(mergedStack.size());
 
     }
 
